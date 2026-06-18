@@ -1,0 +1,127 @@
+/* ===========================================================
+   Yasás! Editions — shared styles (style.css)
+   Used by every page so the whole site feels like one imprint.
+   =========================================================== */
+:root{
+  --ink:#1d2b2a;
+  --paper:#f3ede0;
+  --sea:#1f6f78;
+  --sea-deep:#13474e;
+  --sun:#d98a3d;
+  --sun-deep:#c4762d;
+  --whitewash:#fbf8f1;
+  --line:#cfc3ad;
+  --muted:#54615d;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);
+  font-family:Georgia,'Times New Roman',serif;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+a{color:var(--sea)}
+
+/* ---------- Top nav (same on every page) ---------- */
+.nav{
+  background:var(--sea-deep);color:var(--whitewash);
+  position:sticky;top:0;z-index:50;
+}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;
+  padding-top:14px;padding-bottom:14px;flex-wrap:wrap;gap:8px}
+.nav .brand{font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;color:#fff;text-decoration:none}
+.nav .brand b{color:var(--sun)}
+.nav .links{display:flex;gap:22px;flex-wrap:wrap}
+.nav .links a{color:#cfe0e1;text-decoration:none;font-size:.92rem;letter-spacing:.02em}
+.nav .links a:hover,.nav .links a.active{color:var(--sun)}
+
+/* ---------- Generic header / hero ---------- */
+header.hero{
+  background:
+    radial-gradient(120% 90% at 50% -10%, rgba(217,138,61,.18), transparent 60%),
+    linear-gradient(180deg,var(--sea-deep),var(--sea));
+  color:var(--whitewash);text-align:center;padding:72px 24px 64px;
+  position:relative;overflow:hidden;
+}
+.imprint-mark{font-size:.72rem;letter-spacing:.42em;text-transform:uppercase;opacity:.85;margin-bottom:18px}
+header.hero h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:400;line-height:1.04;letter-spacing:-.5px}
+header.hero h1 .bang{color:var(--sun)}
+header.hero p.tag{font-style:italic;font-size:clamp(1.05rem,2.4vw,1.35rem);margin-top:18px;opacity:.92}
+.meander{margin:30px auto 0;width:128px;height:14px;opacity:.9}
+
+/* ---------- Sections ---------- */
+section{padding:64px 0}
+.eyebrow{display:inline-block;font-size:.7rem;letter-spacing:.34em;text-transform:uppercase;
+  color:var(--sea);border:1px solid var(--line);border-radius:999px;padding:6px 16px;margin-bottom:18px}
+.sec-head{max-width:680px;margin-bottom:40px}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:400;line-height:1.1}
+.sec-head p{margin-top:12px;color:var(--muted);font-size:1.05rem}
+.divider{height:1px;background:var(--line);max-width:1040px;margin:0 auto}
+
+/* ---------- Book grid ---------- */
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,260px));gap:34px;justify-content:start}
+.book{background:var(--whitewash);border:1px solid var(--line);border-radius:4px;padding:18px;
+  display:flex;flex-direction:column;transition:transform .18s ease,box-shadow .18s ease}
+.book:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(19,71,78,.14)}
+.cover{aspect-ratio:2/3;border-radius:3px;display:flex;align-items:center;justify-content:center;
+  text-align:center;padding:20px;color:#fff;margin-bottom:16px;position:relative;overflow:hidden}
+.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cover.travel{background:linear-gradient(160deg,#1f6f78,#13474e)}
+.cover.mystery{background:linear-gradient(160deg,#5b2a3e,#2c1a2b)}
+.cover .ct{position:relative;z-index:2}
+.cover .ct .series{font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;opacity:.85}
+.cover .ct .title{font-size:1.35rem;margin:10px 0 6px;line-height:1.1}
+.cover .ct .sub{font-style:italic;font-size:.85rem;opacity:.9}
+.placeholder-note{position:absolute;bottom:8px;left:0;right:0;font-size:.58rem;letter-spacing:.12em;
+  text-transform:uppercase;opacity:.5;z-index:2}
+.book h3{font-size:1.15rem;font-weight:400;margin-bottom:4px}
+.book .byline{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.book p.blurb{font-size:.92rem;color:#3c4744;flex-grow:1;margin-bottom:16px}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-block;text-align:center;text-decoration:none;background:var(--sun);color:#2a1a0c;
+  font-family:Georgia,serif;padding:11px 18px;border-radius:3px;font-size:.95rem;letter-spacing:.02em;
+  transition:background .15s ease;cursor:pointer;border:none}
+.btn:hover{background:var(--sun-deep)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+.btn.ghost:hover{background:var(--whitewash)}
+
+/* ---------- Cross-sell strip ---------- */
+.crosssell{background:var(--whitewash);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.crosssell .inner{display:flex;gap:28px;align-items:center;flex-wrap:wrap;justify-content:center;text-align:center}
+.crosssell p{font-size:1.15rem;font-style:italic;max-width:560px}
+
+/* ---------- Audio chapter blocks ---------- */
+.chapter{background:var(--whitewash);border:1px solid var(--line);border-radius:4px;
+  padding:24px;margin-bottom:22px}
+.chapter h3{font-size:1.3rem;font-weight:400;margin-bottom:4px}
+.chapter .ch-sub{color:var(--muted);font-style:italic;margin-bottom:18px;font-size:.95rem}
+.clip{margin-bottom:18px}
+.clip:last-child{margin-bottom:0}
+.clip .label{font-size:.92rem;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.clip .label .kind{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;
+  background:var(--sea);color:#fff;padding:3px 9px;border-radius:999px}
+.clip audio{width:100%;height:40px}
+.clip .dl{font-size:.82rem;margin-top:6px;display:inline-block}
+
+/* ---------- Bonus cards ---------- */
+.bonus-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+.bonus{background:var(--whitewash);border:1px solid var(--line);border-radius:4px;padding:22px;
+  display:flex;flex-direction:column}
+.bonus .tagk{font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sun-deep);margin-bottom:10px}
+.bonus h3{font-size:1.2rem;font-weight:400;margin-bottom:6px}
+.bonus p{font-size:.92rem;color:#3c4744;flex-grow:1;margin-bottom:16px}
+
+/* ---------- Footer ---------- */
+footer{background:var(--sea-deep);color:#cfe0e1;padding:48px 24px;font-size:.85rem}
+footer .wrap{max-width:760px;text-align:center}
+footer .imprint{font-size:1.1rem;color:var(--whitewash);letter-spacing:.12em;margin-bottom:14px}
+footer .disclosure{opacity:.78;line-height:1.6;margin-top:10px}
+footer a{color:var(--sun)}
+
+@media (max-width:520px){
+  section{padding:48px 0}
+  header.hero{padding:56px 20px 48px}
+  .nav .wrap{justify-content:center}
+}

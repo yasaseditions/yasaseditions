@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Yasás! Editions</title>
+<link rel="stylesheet" href="style.css">
+<style>
+  .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;align-items:start}
+  .field{margin-bottom:18px}
+  .field label{display:block;font-size:.85rem;letter-spacing:.04em;margin-bottom:6px;color:var(--muted)}
+  .field input,.field textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:3px;
+    background:var(--whitewash);font-family:Georgia,serif;font-size:1rem;color:var(--ink)}
+  .field textarea{min-height:140px;resize:vertical}
+  .field input:focus,.field textarea:focus{outline:2px solid var(--sea);border-color:var(--sea)}
+  .reach{background:var(--whitewash);border:1px solid var(--line);border-radius:4px;padding:26px}
+  .reach h3{font-weight:400;font-size:1.2rem;margin-bottom:14px}
+  .reach p{font-size:.95rem;color:#3c4744;margin-bottom:14px}
+  .reach a{font-weight:bold}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">Yasás<b>!</b> Editions</a>
+    <div class="links">
+      <a href="index.html">Books</a>
+      <a href="audio/index.html">Audio Companion</a>
+      <a href="bonuses/index.html">Sífira Bonuses</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="imprint-mark">Yasás! Editions</div>
+    <h1>Say yásas<span class="bang">.</span></h1>
+    <p class="tag">Questions, hellos, or a note from the road — all welcome.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="contact-grid">
+
+      <!-- ===== FORM (wired for Formspree; see note) ===== -->
+      <div>
+        <div class="sec-head" style="margin-bottom:24px">
+          <h2>Send a message</h2>
+          <p>Fill this in and it lands in my inbox. I read every one.</p>
+        </div>
+
+        <!-- TO ACTIVATE:
+             1. Make a free account at formspree.io
+             2. Create a form; copy its endpoint (looks like https://formspree.io/f/abcdwxyz)
+             3. Paste it into the action="" below.
+             Until then the form won't send — use the email on the right. -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="field">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="field">
+            <label for="message">Your message</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn">Send message →</button>
+        </form>
+      </div>
+
+      <!-- ===== DIRECT REACH ===== -->
+      <div class="reach">
+        <h3>Or reach me directly</h3>
+        <p>Prefer your own email app? Write to:</p>
+        <p><a href="mailto:hello@yasaseditions.com">hello@yasaseditions.com</a></p>
+        <p style="margin-top:22px">For anything about a specific book — a typo,
+           a question, a kind word — mention the title so I can find it fast.</p>
+        <p style="font-style:italic;color:var(--muted)">Replace the email above with
+           the address you want readers to use.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="imprint">YASÁS! EDITIONS</div>
+    <div>Books by [Your Name] · Greece, on every page.</div>
+    <p class="disclosure"><a href="privacy.html">Privacy Policy</a></p>
+  </div>
+</footer>
+
+</body>
+</html>
